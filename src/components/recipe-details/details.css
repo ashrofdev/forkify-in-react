@@ -1,0 +1,5 @@
+.details {
+    background-color: blue;
+    grid-column: 2/4;
+    height: 40rem;
+}
