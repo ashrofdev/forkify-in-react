@@ -1,5 +1,13 @@
 .header {
-    background-color: red;
     grid-column: 1/-1;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 7rem;
+}
+img {
+    width: 100%;
 }
