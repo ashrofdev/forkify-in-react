@@ -6,15 +6,26 @@ import RecipeDetails from './components/recipe-details/RecipeDetails';
 import ShoppingList from './components/shopping-list/ShoppingList';
 
 
+    const key = '5a9f62241058604119173d56902e498e'
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      recipes: []
+      recipes: [],
+      recipeDetails: []
     }
   }
+  click = (rid) => {
+    console.log('loading...')
+    fetch(`https://www.food2fork.com/api/get?key=${key}&rId=${rid}`).then((response)=>{
+        return response.json()
+    }).then((data)=>{
+        this.setState({recipeDetails: data.recipe})
+        console.log(this.state.recipeDetails)
+        console.log('done')
+    })
+  }
   onSearch = () => {
-    const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
     console.log('loading...')
     const search = document.querySelector('input').value
     fetch(`https://www.food2fork.com/api/search?key=${key}&q=${search}`)
@@ -31,7 +42,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header search={this.onSearch}/>
-          <RecipeList recipes={this.state.recipes}/>
+          <RecipeList recipes={this.state.recipes} click={this.click}/>
           <RecipeDetails/>
           <ShoppingList/>
         </div>
