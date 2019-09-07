@@ -1,5 +1,6 @@
 .details {
-    background-color: blue;
+    background-color: var(--cs);
+    border-top: 1px solid white;
     grid-column: 2/4;
     height: 40rem;
 }
