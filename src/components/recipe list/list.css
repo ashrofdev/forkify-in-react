@@ -1,5 +1,20 @@
+@keyframes in {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .list {
     background-color: white;
+    position: relative;
+}
+.ani {
+    animation: in 1s;
 }
 .recipe {
     display: flex;
@@ -29,5 +44,31 @@
     color: var(--cp);
 }
 .recipe .author {
-    font-size: .6rem;
+    font-size: .8rem;
+    color: gray;
+    margin-top: .5rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+.simg {
+    position: absolute;
+    top: 5rem;
+    left: 40%;
+    z-index: 1000;
+    display: none;
+    animation: spin 1s infinite;
+    width: 20%;
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+}
+.show {
+    display: block;
 }
