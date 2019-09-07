@@ -6,7 +6,7 @@ const Header = ({search}) => {
     return (
         <div className="header">
             <div className="logo">
-                <img src={require('./logo.png')}/>
+                <img src={require('./logo.png')} alt="logo"/>
             </div>
             <div className="search-box">
                 <Search search={search}/>

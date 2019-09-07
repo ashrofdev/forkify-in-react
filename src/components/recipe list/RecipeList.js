@@ -3,10 +3,15 @@ import './list.css'
 import Recipe from './Recipe';
 
 
+
 const RecipeList = ({recipes}) => {
+    
     const recipe = recipes.map((e,i)=> {
+        const click = () => {
+            console.log(recipes[i].recipe_id)
+        }
         return (
-            <Recipe key={recipes[i].recipe_id} name={recipes[i].title}
+            <Recipe click={click} key={recipes[i].recipe_id} id={recipes[i].recipe_id} name={recipes[i].title}
                 image={recipes[i].image_url} author={recipes[i].publisher}
             />
         )
@@ -14,7 +19,7 @@ const RecipeList = ({recipes}) => {
     return (
         
         <div className="list">
-            {recipe}gfg
+            {recipe}
         </div>
     )
 }
