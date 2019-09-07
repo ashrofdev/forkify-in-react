@@ -43,7 +43,7 @@ class App extends Component {
         <div className="container">
           <Header search={this.onSearch}/>
           <RecipeList recipes={this.state.recipes} click={this.click}/>
-          <RecipeDetails/>
+          <RecipeDetails recipe={this.state.recipeDetails}/>
           <ShoppingList/>
         </div>
       </div>
