@@ -1,0 +1,22 @@
+.search {
+    display: flex;
+}
+.search input {
+    border-radius: 10rem;
+    width: 25rem;
+    border: none;
+    font-size: .8rem;
+    outline: none;
+    height: 2.4rem;
+    padding: 0 1rem;
+}
+.search button {
+    height: 2.4rem;
+    padding: 0 2rem;
+    border-radius: 10rem;
+    background-image: linear-gradient(to right, var(--cpl), var(--cp));
+    color: white;
+    margin-left: -6rem;
+    outline: none;
+    font-size: 1rem;
+}
