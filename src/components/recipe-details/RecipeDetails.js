@@ -19,10 +19,16 @@ const RecipeDetails = ({recipe, ingredients}) => {
                 <img src={recipe.image_url}/>
             </div>
             <h2>{recipe.title}</h2>
-            <div className="rank">{recipe.social_rank}</div>
-            <a hrer={recipe.publisher_url} className="publisher">{recipe.publisher}</a>
+            <div className="rank">{`${Math.floor(recipe.social_rank - 2)}%`}</div>
             <div className="ing">
                 {ing}
+            </div>
+            <div className="how">
+                <h1>HOW TO COOK</h1>
+                <p>This recipe was carefully designed and tested by 
+                {recipe.publisher}. Please check out directions at their 
+                website.</p>
+                <a className="url" href={recipe.publisher_url}>directions</a>
             </div>
         </div>
     )

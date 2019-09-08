@@ -35,6 +35,7 @@ h2 {
     padding: 2rem;
     height: 10rem;
     overflow-y: scroll;
+    background-color: rgb(224, 223, 223);
 }
 .ingredient {
     display: flex;
@@ -46,4 +47,31 @@ h2 {
     height: .5rem;
     margin-right: .5rem;
     background-color: var(--cp);
+}
+.rank {
+    position: absolute;
+    top: 20rem;
+    right: -1rem;
+    color: white;
+    font-size: 1rem;
+    background-image: linear-gradient(to right, var(--cpl), var(--cp));
+    padding: 1rem .5rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1rem rgb(34, 34, 34);
+}
+.how {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.how p {
+    padding: 1rem;
+}
+.how a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, var(--cpl), var(--cp));
+    border-radius: 10rem;
 }
