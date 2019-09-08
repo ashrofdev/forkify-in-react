@@ -1,9 +1,15 @@
 import React from 'react'
 import './details.css'
 
-const RecipeDetails = ({recipe}) => {
-    const l = Object.values(recipe)
-    console.log(l[2])
+const RecipeDetails = ({recipe, ingredients}) => {
+    const ing = ingredients.map((e, i) => {
+        return (
+            <div className="ingredient">
+            <span></span>
+                <p>{ingredients[i]}</p>
+            </div>
+        )
+    });
     return (
         <div className="details">
             <div className="rsimg simg">
@@ -16,7 +22,7 @@ const RecipeDetails = ({recipe}) => {
             <div className="rank">{recipe.social_rank}</div>
             <a hrer={recipe.publisher_url} className="publisher">{recipe.publisher}</a>
             <div className="ing">
-                {'ingredent'}
+                {ing}
             </div>
         </div>
     )

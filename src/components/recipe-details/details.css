@@ -2,7 +2,6 @@
     background-color: var(--cs);
     border-top: 1px solid white;
     grid-column: 2/4;
-    height: 40rem;
     position: relative;
 }
 .rimg {
@@ -28,4 +27,23 @@ h2 {
     top: 5rem;
     left: 40%;
     z-index: 1000;
+}
+.ing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 2rem;
+    height: 10rem;
+    overflow-y: scroll;
+}
+.ingredient {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ingredient span {
+    width: .5rem;
+    height: .5rem;
+    margin-right: .5rem;
+    background-color: var(--cp);
 }

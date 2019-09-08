@@ -6,13 +6,14 @@ import RecipeDetails from './components/recipe-details/RecipeDetails';
 import ShoppingList from './components/shopping-list/ShoppingList';
 
 
-const key = '589f73f2a566d81d99bbc4dc197b187f'
+const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       recipes: [],
-      recipeDetails: []
+      recipeDetails: [],
+      ingredients: []
     }
   }
   click = async (rid) => {
@@ -20,11 +21,12 @@ class App extends Component {
     console.log('loading...')
     await fetch(`https://www.food2fork.com/api/get?key=${key}&rId=${rid}`).then((response)=>{
         return response.json()
-    }).then((data)=>{
-        this.setState({recipeDetails: data.recipe})
-        console.log(this.state.recipeDetails)
-        document.querySelector('.rsimg').classList.remove('show')
-        console.log('done')
+      }).then((data)=>{
+          this.setState({recipeDetails: data.recipe})
+          console.log(this.state.recipeDetails)
+          document.querySelector('.rsimg').classList.remove('show')
+          this.setState({ingredients: data.recipe.ingredients})
+          console.log('done')
     })
   }
   onSearch = async () => {
@@ -53,7 +55,7 @@ class App extends Component {
         <div className="container">
           <Header search={this.onSearch}/>
           <RecipeList recipes={this.state.recipes} click={this.click}/>
-          <RecipeDetails recipe={this.state.recipeDetails}/>
+          <RecipeDetails recipe={this.state.recipeDetails} ingredients={this.state.ingredients}/>
           <ShoppingList/>
         </div>
       </div>
