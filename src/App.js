@@ -4,10 +4,9 @@ import Header from './components/Header/Header';
 import RecipeList from './components/recipe list/RecipeList';
 import RecipeDetails from './components/recipe-details/RecipeDetails';
 import ShoppingList from './components/shopping-list/ShoppingList';
-import { async } from 'q';
 
 
-    const key = '589f73f2a566d81d99bbc4dc197b187f'
+const key = '589f73f2a566d81d99bbc4dc197b187f'
 class App extends Component {
   constructor(props){
     super(props)
@@ -44,8 +43,8 @@ class App extends Component {
         console.log(this.state.recipes)
         console.log('done')
     }).catch((err)=>{
-      alert('unable to fetch api')
       document.querySelector('.simg').classList.remove('show')
+      this.setState({recipes: undefined})
     })
   }
   render(){
