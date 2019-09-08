@@ -2,6 +2,8 @@ import React from 'react'
 import './details.css'
 
 const RecipeDetails = ({recipe}) => {
+    const l = Object.values(recipe)
+    console.log(l[2])
     return (
         <div className="details">
             <div className="rsimg simg">
@@ -13,6 +15,9 @@ const RecipeDetails = ({recipe}) => {
             <h2>{recipe.title}</h2>
             <div className="rank">{recipe.social_rank}</div>
             <a hrer={recipe.publisher_url} className="publisher">{recipe.publisher}</a>
+            <div className="ing">
+                {'ingredent'}
+            </div>
         </div>
     )
 }
