@@ -10,7 +10,7 @@ import ShoppingList from './components/shopping-list/ShoppingList';
 //cd415bc4d63c37859d9c235af09bb1ac
 //5df8b827c173c66cb319751ca0d8a699
 
-const key = '5df8b827c173c66cb319751ca0d8a699'
+const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
 class App extends Component {
   constructor(props){
     super(props)
@@ -21,6 +21,14 @@ class App extends Component {
       time: 0
     }
   }
+
+
+  componentDidMount(){
+    document.querySelector('.back').addEventListener('click', () =>{
+      document.querySelector('.details').classList.remove('respon')
+    })
+  }
+
   click = async (rid) => {
     document.querySelector('.details').classList.add('respon')
     const time = Math.ceil(Math.random() * (30 - 15)) + 15;

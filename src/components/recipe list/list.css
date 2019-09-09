@@ -74,13 +74,16 @@
 .show {
     display: block;
 }
-.respon {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-    opacity: 1;
-    transform: none;
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @media only screen and (max-width: 520px) {
@@ -88,5 +91,14 @@
         grid-column: 1/-1;
         grid-row: 2/-1;
         z-index: 1000;
+    }
+    .respon {
+        animation: animate 1s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        opacity: 1;
+        transform: none;
     }
 }

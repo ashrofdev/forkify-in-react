@@ -147,4 +147,10 @@ h2 {
         top: 20rem;
         right: 40%;
     }
+    .back {
+        font-size: 2rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.76);
+        padding: .5rem;
+    }
 }

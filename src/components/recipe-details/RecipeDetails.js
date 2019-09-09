@@ -17,6 +17,7 @@ const RecipeDetails = ({recipe, ingredients, time}) => {
     });
     return (
         <div className="details">
+            <span className="back">&larr;</span>
             <div className="toshow">
                 <div className="rsimg simg">
                     <img className="spinner" src={require('../spinner.png')}/>
