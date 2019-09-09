@@ -2,6 +2,9 @@ import React from 'react'
 import './details.css'
 import 'font-awesome/css/font-awesome.min.css'
 
+const like = () => {
+    document.querySelector('.top .fa').classList.toggle('fa-heart-o')
+}
 
 const RecipeDetails = ({recipe, ingredients, time}) => {
     const ing = ingredients.map((e, i) => {
@@ -24,11 +27,12 @@ const RecipeDetails = ({recipe, ingredients, time}) => {
                 <h2>{recipe.title}</h2>
                 <div className="top">
                     <p className="time">{`${time} minutes`}</p>
-                    <i className="fa fa-heart"></i>
+                    <i onClick={like} className="fa fa-heart fa-heart-o"></i>
                 </div>
                 <div className="rank">{`${Math.floor(recipe.social_rank - 2)}%`}</div>
                 <div className="ing">
                     {ing}
+                    <button>ADD TO SHOPPING LIST</button>
                 </div>
                 <div className="how">
                     <h1>HOW TO COOK</h1>
