@@ -12,6 +12,7 @@
 .list {
     background-color: white;
     position: relative;
+    padding-top: 2rem;
 }
 .ani {
     animation: in 1s;
@@ -23,6 +24,7 @@
     cursor: pointer;
     transform: translateY(.2rem);
     transition: all .5s;
+    color: red;
 }
 .recipe:hover {
     transform: none;

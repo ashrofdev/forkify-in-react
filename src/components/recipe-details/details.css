@@ -3,6 +3,13 @@
     border-top: 1px solid white;
     grid-column: 2/4;
     position: relative;
+    min-height: 40rem;
+}
+.toshow {
+    display: none;
+}
+.dshow {
+    display: block;
 }
 .rimg {
     height: 25rem;
@@ -12,6 +19,7 @@
     height: 100%;
 }
 h2 {
+    margin: 0;
     transform: rotate(-7deg) translateY(-100%);
     box-shadow: .2rem .2rem 2rem rgb(58, 57, 57);
     color: white;
@@ -21,6 +29,7 @@ h2 {
     max-width: 24rem;
     margin: auto;
     background-image: linear-gradient(to right, var(--cpl), var(--cp));
+    margin-bottom: -1rem;
 }
 .rsimg {
     position: absolute;
@@ -35,7 +44,7 @@ h2 {
     padding: 2rem;
     height: 10rem;
     overflow-y: scroll;
-    background-color: rgb(224, 223, 223);
+    background-color: rgb(238, 236, 236);
 }
 .ingredient {
     display: flex;
@@ -60,8 +69,11 @@ h2 {
     box-shadow: 2px 2px 1rem rgb(34, 34, 34);
 }
 .how {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem 4rem 2rem;
     text-align: center;
+}
+.how h1 {
+    font-size: 1.5rem;
 }
 .how p {
     padding: 1rem;
@@ -74,4 +86,13 @@ h2 {
     text-transform: uppercase;
     background-image: linear-gradient(to right, var(--cpl), var(--cp));
     border-radius: 10rem;
+}
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+.top .time {
+    color: var(--cp);
 }

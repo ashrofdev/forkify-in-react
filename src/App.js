@@ -5,18 +5,26 @@ import RecipeList from './components/recipe list/RecipeList';
 import RecipeDetails from './components/recipe-details/RecipeDetails';
 import ShoppingList from './components/shopping-list/ShoppingList';
 
+//d5bb331a6b84d053e3b6e2e8c1cec561
+//5a9f62241058604119173d56902e498e
+//cd415bc4d63c37859d9c235af09bb1ac
+//5df8b827c173c66cb319751ca0d8a699
 
-const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
+const key = '5a9f62241058604119173d56902e498e'
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
       recipes: [],
       recipeDetails: [],
-      ingredients: []
+      ingredients: [],
+      time: 0
     }
   }
   click = async (rid) => {
+    const time = Math.ceil(Math.random() * (30 - 15)) + 15;
+    this.setState({time: time})
+    document.querySelector('.toshow').classList.add('dshow')
     document.querySelector('.rsimg').classList.add('show')
     console.log('loading...')
     await fetch(`https://www.food2fork.com/api/get?key=${key}&rId=${rid}`).then((response)=>{
@@ -55,7 +63,10 @@ class App extends Component {
         <div className="container">
           <Header search={this.onSearch}/>
           <RecipeList recipes={this.state.recipes} click={this.click}/>
-          <RecipeDetails recipe={this.state.recipeDetails} ingredients={this.state.ingredients}/>
+          <RecipeDetails recipe={this.state.recipeDetails}
+           ingredients={this.state.ingredients}
+             time={this.state.time}
+           />
           <ShoppingList/>
         </div>
       </div>
