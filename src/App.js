@@ -22,6 +22,7 @@ class App extends Component {
     }
   }
   click = async (rid) => {
+    document.querySelector('.details').classList.add('respon')
     const time = Math.ceil(Math.random() * (30 - 15)) + 15;
     this.setState({time: time})
     document.querySelector('.toshow').classList.add('dshow')

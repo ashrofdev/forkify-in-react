@@ -1,6 +1,8 @@
 .header {
     grid-column: 1/-1;
+    grid-row: 1/2;
     padding: 1rem;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,4 +12,15 @@
 }
 img {
     width: 100%;
+}
+@media only screen and (max-width: 520px) {
+    .header {
+        flex-direction: column;
+    }
+    .search {
+        margin: 1rem 0;
+    }
+    .likes {
+        align-self: flex-end;
+    }
 }

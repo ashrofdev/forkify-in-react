@@ -125,3 +125,26 @@ h2 {
     border-radius: 10rem;
     text-shadow: 1px 1px 2px black;
 }
+
+@media only screen and (max-width: 700px) {
+    .details {
+        grid-column: 2/-1;
+    }
+}
+@media only screen and (max-width: 520px) {
+    .details {
+        grid-column: 1/-1;
+        grid-row: 2/-1;
+    }
+    h2 {
+        margin: 0;
+        transform: none;
+        font-size: 2rem;
+        background-image: linear-gradient(to right, var(--cpl), var(--cp));
+        box-shadow: none;
+    }
+    .rank {
+        top: 20rem;
+        right: 40%;
+    }
+}

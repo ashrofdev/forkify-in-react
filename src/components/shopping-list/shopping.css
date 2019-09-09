@@ -1,3 +1,8 @@
 .shopping {
     background-color: white;
 }
+@media only screen and (max-width: 700px) {
+    .shopping {
+        grid-column: 1/-1;
+    }
+}
