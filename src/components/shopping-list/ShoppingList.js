@@ -16,6 +16,7 @@ const ShoppingList = ({shoppingList}) => {
     });
     return (
         <div className="shopping">
+            <h3>SHOPPING LIST</h3>
             <div className="item">{ing}</div>
         </div>
     )

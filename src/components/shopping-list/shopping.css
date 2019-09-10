@@ -1,6 +1,14 @@
 .shopping {
     background-color: white;
 }
+.shopping h3 {
+    font-size: 1.3rem;
+    transform: skewY(-5deg);
+    text-align: center;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, var(--cpl), var(--cp))
+}
 
 .shop-list {
     padding: .5rem 1rem;
