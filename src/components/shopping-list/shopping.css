@@ -1,6 +1,18 @@
 .shopping {
     background-color: white;
 }
+
+.shop-list {
+    padding: .5rem 1rem;
+    border-bottom: 1px solid var(--cs);
+    cursor: pointer;
+    color: rgb(153, 152, 152);
+    transition: all .5s;
+}
+.shop-list:hover {
+    background-color: var(--cs);
+}
+
 @media only screen and (max-width: 700px) {
     .shopping {
         grid-column: 1/-1;
