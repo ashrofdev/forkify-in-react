@@ -29,26 +29,15 @@ class App extends Component {
       document.querySelector('.list').classList.add('listuo')
       document.querySelector('.details').classList.remove('respon')
     })
-  }
-
-  click = async (rid) => {
-    document.querySelector('.details').classList.add('respon')
-    const time = Math.ceil(Math.random() * (30 - 15)) + 15;
-    this.setState({time: time})
-    document.querySelector('.toshow').classList.add('dshow')
-    document.querySelector('.rsimg').classList.add('show')
-    console.log('loading...')
-    await fetch(`https://www.food2fork.com/api/get?key=${key}&rId=${rid}`).then((response)=>{
-        return response.json()
-      }).then((data)=>{
-          this.setState({recipeDetails: data.recipe})
-          console.log(this.state.recipeDetails)
-          document.querySelector('.rsimg').classList.remove('show')
-          this.setState({ingredients: data.recipe.ingredients})
-          console.log('done')
+    window.addEventListener('keypress', (e) =>{
+      console.log(e.key)
+      if (e.key === 'Enter') {
+        this.search()
+      }
     })
   }
-  onSearch = async () => {
+
+  search = async () => {
     document.querySelector('.details').classList.remove('respon')
     document.querySelector('.simg').classList.add('show')
     console.log('loading...')
@@ -68,6 +57,27 @@ class App extends Component {
       document.querySelector('.simg').classList.remove('show')
       this.setState({recipes: undefined})
     })
+  }
+
+  click = async (rid) => {
+    document.querySelector('.details').classList.add('respon')
+    const time = Math.ceil(Math.random() * (30 - 15)) + 15;
+    this.setState({time: time})
+    document.querySelector('.toshow').classList.add('dshow')
+    document.querySelector('.rsimg').classList.add('show')
+    console.log('loading...')
+    await fetch(`https://www.food2fork.com/api/get?key=${key}&rId=${rid}`).then((response)=>{
+        return response.json()
+      }).then((data)=>{
+          this.setState({recipeDetails: data.recipe})
+          console.log(this.state.recipeDetails)
+          document.querySelector('.rsimg').classList.remove('show')
+          this.setState({ingredients: data.recipe.ingredients})
+          console.log('done')
+    })
+  }
+  onSearch = () => {
+    this.search()
   }
   renderIngeredients = () => {
     this.setState({shoppingList: this.state.ingredients})
