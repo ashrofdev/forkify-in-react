@@ -6,7 +6,7 @@ const like = () => {
     document.querySelector('.top .fa').classList.toggle('fa-heart-o')
 }
 
-const RecipeDetails = ({recipe, ingredients, time}) => {
+const RecipeDetails = ({recipe, ingredients, time, renderIngeredients}) => {
     const ing = ingredients.map((e, i) => {
         return (
             <div className="ingredient">
@@ -33,7 +33,7 @@ const RecipeDetails = ({recipe, ingredients, time}) => {
                 <div className="rank">{`${Math.floor(recipe.social_rank - 2)}%`}</div>
                 <div className="ing">
                     {ing}
-                    <button>ADD TO SHOPPING LIST</button>
+                    <button onClick={renderIngeredients}>ADD TO SHOPPING LIST</button>
                 </div>
                 <div className="how">
                     <h1>HOW TO COOK</h1>

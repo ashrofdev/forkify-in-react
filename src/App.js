@@ -10,7 +10,7 @@ import ShoppingList from './components/shopping-list/ShoppingList';
 //cd415bc4d63c37859d9c235af09bb1ac
 //5df8b827c173c66cb319751ca0d8a699
 
-const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
+const key = 'cd415bc4d63c37859d9c235af09bb1ac'
 class App extends Component {
   constructor(props){
     super(props)
@@ -18,6 +18,7 @@ class App extends Component {
       recipes: [],
       recipeDetails: [],
       ingredients: [],
+      shoppingList: [],
       time: 0
     }
   }
@@ -25,6 +26,7 @@ class App extends Component {
 
   componentDidMount(){
     document.querySelector('.back').addEventListener('click', () =>{
+      document.querySelector('.list').classList.add('listuo')
       document.querySelector('.details').classList.remove('respon')
     })
   }
@@ -47,6 +49,7 @@ class App extends Component {
     })
   }
   onSearch = async () => {
+    document.querySelector('.details').classList.remove('respon')
     document.querySelector('.simg').classList.add('show')
     console.log('loading...')
     const search = document.querySelector('input').value
@@ -66,6 +69,9 @@ class App extends Component {
       this.setState({recipes: undefined})
     })
   }
+  renderIngeredients = () => {
+    this.setState({shoppingList: this.state.ingredients})
+  }
   render(){
     return (
       <div className="App">
@@ -74,9 +80,9 @@ class App extends Component {
           <RecipeList recipes={this.state.recipes} click={this.click}/>
           <RecipeDetails recipe={this.state.recipeDetails}
            ingredients={this.state.ingredients}
-             time={this.state.time}
+             time={this.state.time} renderIngeredients={this.renderIngeredients}
            />
-          <ShoppingList/>
+          <ShoppingList shoppingList={this.state.shoppingList}/>
         </div>
       </div>
     );

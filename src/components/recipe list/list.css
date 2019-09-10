@@ -101,4 +101,8 @@
         opacity: 1;
         transform: none;
     }
+    .listup {
+        animation: animate 1s;
+        z-index: 10000000;
+    }
 }
