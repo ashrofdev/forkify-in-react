@@ -5,7 +5,7 @@ const ShoppingList = ({shoppingList}) => {
     const ing = shoppingList.map((e, i) => {
         return (
             <div className="shop-list">
-                <p>{shoppingList[i]}</p>
+                <p>{'* '+e}</p>
             </div>
         )
     });
