@@ -19,6 +19,7 @@ class App extends Component {
       recipeDetails: [],
       ingredients: [],
       shoppingList: [],
+      likes: [],
       time: 0
     }
   }
@@ -82,6 +83,12 @@ class App extends Component {
   renderIngeredients = () => {
     this.setState({shoppingList: this.state.ingredients})
   }
+
+  onLike = () => {
+    this.state.likes.push(this.state.recipeDetails)
+    console.log(this.state.likes)
+  }
+
   render(){
     return (
       <div className="App">
@@ -91,6 +98,7 @@ class App extends Component {
           <RecipeDetails recipe={this.state.recipeDetails}
            ingredients={this.state.ingredients}
              time={this.state.time} renderIngeredients={this.renderIngeredients}
+             likes={this.onLike}
            />
           <ShoppingList shoppingList={this.state.shoppingList}/>
         </div>

@@ -12,7 +12,7 @@ const Header = ({search}) => {
                 <Search search={search}/>
             </div>
             <div className="likes">
-                likes
+                <i className="fa fa-heart"></i>
             </div>
         </div>
     )
