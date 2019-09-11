@@ -20,6 +20,7 @@ class App extends Component {
       ingredients: [],
       shoppingList: [],
       likes: [],
+      likesList: [],
       time: 0
     }
   }
@@ -41,7 +42,6 @@ class App extends Component {
   search = async () => {
     document.querySelector('.details').classList.remove('respon')
     document.querySelector('.simg').classList.add('show')
-    console.log('loading...')
     const search = document.querySelector('input').value
     await fetch(`https://www.food2fork.com/api/search?key=${key}&q=${search}`)
     .then((response)=>{
@@ -66,15 +66,12 @@ class App extends Component {
     this.setState({time: time})
     document.querySelector('.toshow').classList.add('dshow')
     document.querySelector('.rsimg').classList.add('show')
-    console.log('loading...')
     await fetch(`https://www.food2fork.com/api/get?key=${key}&rId=${rid}`).then((response)=>{
         return response.json()
       }).then((data)=>{
           this.setState({recipeDetails: data.recipe})
-          console.log(this.state.recipeDetails)
           document.querySelector('.rsimg').classList.remove('show')
           this.setState({ingredients: data.recipe.ingredients})
-          console.log('done')
     })
   }
   onSearch = () => {
@@ -86,14 +83,15 @@ class App extends Component {
 
   onLike = () => {
     this.state.likes.push(this.state.recipeDetails)
-    console.log(this.state.likes)
+    this.setState({likesList: this.state.likes})
+    console.log(this.state.likes, 'likes list')
   }
 
   render(){
     return (
       <div className="App">
         <div className="container">
-          <Header search={this.onSearch}/>
+          <Header search={this.onSearch} likesList={this.state.likesList}/>
           <RecipeList recipes={this.state.recipes} click={this.click}/>
           <RecipeDetails recipe={this.state.recipeDetails}
            ingredients={this.state.ingredients}
