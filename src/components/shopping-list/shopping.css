@@ -1,6 +1,8 @@
 .shopping {
     background-color: white;
+    z-index: 100;
 }
+
 .shopping h3 {
     font-size: 1.3rem;
     transform: skewY(-5deg);

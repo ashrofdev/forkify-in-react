@@ -23,9 +23,11 @@ const Header = ({search, likesList}) => {
                 <Search search={search}/>
             </div>
             <div className="likes">
-                <i className="fa fa-heart"></i>
+                <div className="heart">
+                    <i className="fa fa-heart"></i>
+                    <div className="likes-list">{list}</div>
+                </div>
             </div>
-            <div className="likes-list">{list}</div>
         </div>
     )
 }

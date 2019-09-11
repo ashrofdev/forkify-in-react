@@ -5,12 +5,12 @@ import RecipeList from './components/recipe list/RecipeList';
 import RecipeDetails from './components/recipe-details/RecipeDetails';
 import ShoppingList from './components/shopping-list/ShoppingList';
 
-//d5bb331a6b84d053e3b6e2e8c1cec561
+//d5bb331a6b84d053e3b6e2e8c1cec561*
 //5a9f62241058604119173d56902e498e
-//cd415bc4d63c37859d9c235af09bb1ac*
+//cd415bc4d63c37859d9c235af09bb1ac
 //5df8b827c173c66cb319751ca0d8a699
 
-const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
+const key = '5a9f62241058604119173d56902e498e'
 class App extends Component {
   constructor(props){
     super(props)
