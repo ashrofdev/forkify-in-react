@@ -61,12 +61,14 @@ img {
 @media only screen and (max-width: 520px) {
     .header {
         flex-direction: column;
-        z-index: 1000000;
     }
     .search {
         margin: 1rem 0;
     }
     .likes {
         align-self: flex-end;
+    }
+    .heart .likes-list{
+        width: 13rem;
     }
 }
