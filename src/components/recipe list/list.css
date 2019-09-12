@@ -94,6 +94,7 @@
     padding: 1rem;
 }
 .pbuttons button {
+    margin-top: 2rem;
     padding: .5rem 1rem;
     border-radius: 10rem;
     border: none;

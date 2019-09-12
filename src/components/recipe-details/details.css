@@ -155,6 +155,7 @@ h2 {
     .rank {
         top: 20rem;
         right: 40%;
+        z-index: 1;
     }
     .back {
         display: block;
