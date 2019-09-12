@@ -3,15 +3,18 @@ import './list.css'
 import Recipe from './Recipe';
 
 
-const RecipeList = ({recipes, click}) => {
+const RecipeList = ({recipes, click, page, pageAdd, pageSub}) => {
+    const start = (page - 1) * 10
+    const stop = page * 10
     
     if (recipes !== undefined) {
-        const recipe = recipes.slice(0,10).map((e,i)=> {
-            let rid=recipes[i].recipe_id
+        const reducedRecipe = recipes.slice(start, stop)
+        const recipe = reducedRecipe.map((e,i)=> {
+            let rid=reducedRecipe[i].recipe_id
             return (
-                <Recipe click={()=>click(rid)} key={recipes[i].recipe_id} 
-                    id={recipes[i].recipe_id} name={recipes[i].title}
-                    image={recipes[i].image_url} author={recipes[i].publisher}
+                <Recipe click={()=>click(rid)} key={reducedRecipe[i].recipe_id} 
+                    id={reducedRecipe[i].recipe_id} name={reducedRecipe[i].title}
+                    image={reducedRecipe[i].image_url} author={reducedRecipe[i].publisher}
                 />
             )
         })
@@ -19,9 +22,13 @@ const RecipeList = ({recipes, click}) => {
             
             <div className="list">
                 <div className="simg">
-                    <img className="spinner" src={require('../spinner.png')}/>
+                    <img className="spinner" alt="" src={require('../spinner.png')}/>
                 </div>
                 {recipe}
+                <div className="pbuttons">
+                    <button onClick={pageSub}>Prev</button>
+                    <button onClick={pageAdd}>Next</button>
+                </div>
             </div>
         )
     } else {

@@ -7,10 +7,10 @@ import ShoppingList from './components/shopping-list/ShoppingList';
 
 //d5bb331a6b84d053e3b6e2e8c1cec561*
 //5a9f62241058604119173d56902e498e*
-//cd415bc4d63c37859d9c235af09bb1ac
+//cd415bc4d63c37859d9c235af09bb1ac*
 //5df8b827c173c66cb319751ca0d8a699
 
-const key = 'cd415bc4d63c37859d9c235af09bb1ac'
+const key = '5df8b827c173c66cb319751ca0d8a699'
 class App extends Component {
   constructor(props){
     super(props)
@@ -21,7 +21,8 @@ class App extends Component {
       shoppingList: [],
       likes: [],
       likesList: [],
-      time: 0
+      time: 0,
+      page: 2,
     }
   }
 
@@ -57,6 +58,7 @@ class App extends Component {
     }).catch((err)=>{
       document.querySelector('.simg').classList.remove('show')
       this.setState({recipes: undefined})
+      console.log(err)
     })
   }
 
@@ -72,6 +74,8 @@ class App extends Component {
           this.setState({recipeDetails: data.recipe})
           document.querySelector('.rsimg').classList.remove('show')
           this.setState({ingredients: data.recipe.ingredients})
+    }).catch((err)=> {
+      console.log(err)
     })
   }
   onSearch = () => {
@@ -81,10 +85,26 @@ class App extends Component {
     this.setState({shoppingList: this.state.ingredients})
   }
 
+  pageAdd = () => {
+    this.setState({page: this.state.page + 1})
+  }
+  pageSub = () => {
+    this.setState({page: this.state.page - 1})
+  }
+
+
   onLike = () => {
-    this.state.likes.push(this.state.recipeDetails)
-    this.setState({likesList: this.state.likes})
+    document.querySelector('.top .fa').classList.toggle('fa-heart-o')
     console.log(this.state.likes, 'likes list')
+    this.state.likes.forEach(e=>{
+      console.log(e, 'eeeeeee')
+      if (e === this.state.recipeDetails) {
+        console.log('already there')
+      } else {
+        this.state.likes.push(this.state.recipeDetails)
+        this.setState({likesList: this.state.likes})
+      }
+    })
   }
 
   render(){
@@ -92,7 +112,9 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header search={this.onSearch} likesList={this.state.likesList}/>
-          <RecipeList recipes={this.state.recipes} click={this.click}/>
+          <RecipeList recipes={this.state.recipes} click={this.click}
+            page={this.state.page} pageAdd={this.pageAdd} pageSub={this.pageSub}
+          />
           <RecipeDetails recipe={this.state.recipeDetails}
            ingredients={this.state.ingredients}
              time={this.state.time} renderIngeredients={this.renderIngeredients}

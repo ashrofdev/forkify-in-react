@@ -74,6 +74,24 @@
 .show {
     display: block;
 }
+.pbuttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.pbuttons button {
+    padding: .5rem 1rem;
+    border-radius: 10rem;
+    border: none;
+    cursor: pointer;
+    color: var(--cp);
+    background-color: rgba(252, 232, 196, 0.774);
+    transition: all .4s;
+}
+.pbuttons button:hover {
+    box-shadow: 1px 1px 2px rgb(112, 112, 112);
+}
 
 @keyframes animate {
     0% {

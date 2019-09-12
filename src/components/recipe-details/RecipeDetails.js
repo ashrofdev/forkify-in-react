@@ -20,10 +20,10 @@ const RecipeDetails = ({recipe, ingredients, time, renderIngeredients, likes}) =
             <span className="back">&larr;</span>
             <div className="toshow">
                 <div className="rsimg simg">
-                    <img className="spinner" src={require('../spinner.png')}/>
+                    <img className="spinner" alt="" src={require('../spinner.png')}/>
                 </div>
                 <div className="rimg">
-                    <img src={recipe.image_url}/>
+                    <img src={recipe.image_url} alt=""/>
                 </div>
                 <h2>{recipe.title}</h2>
                 <div className="top">
