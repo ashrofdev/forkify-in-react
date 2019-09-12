@@ -5,12 +5,12 @@ import RecipeList from './components/recipe list/RecipeList';
 import RecipeDetails from './components/recipe-details/RecipeDetails';
 import ShoppingList from './components/shopping-list/ShoppingList';
 
-//d5bb331a6b84d053e3b6e2e8c1cec561*
-//5a9f62241058604119173d56902e498e*
-//cd415bc4d63c37859d9c235af09bb1ac*
-//5df8b827c173c66cb319751ca0d8a699
+//d5bb331a6b84d053e3b6e2e8c1cec561
+//5a9f62241058604119173d56902e498e
+//cd415bc4d63c37859d9c235af09bb1ac
+//5df8b827c173c66cb319751ca0d8a699*
 
-const key = '5df8b827c173c66cb319751ca0d8a699'
+const key = 'd5bb331a6b84d053e3b6e2e8c1cec561'
 class App extends Component {
   constructor(props){
     super(props)
@@ -22,7 +22,7 @@ class App extends Component {
       likes: [],
       likesList: [],
       time: 0,
-      page: 2,
+      page: 1,
     }
   }
 
@@ -38,6 +38,19 @@ class App extends Component {
         this.search()
       }
     })
+
+
+    const page = this.state.page
+    if (page > 1 && page < 3) {
+      document.querySelector('.down').classList.remove('fade')
+      document.querySelector('.up').classList.remove('fade')
+    } else if (page >= 3) {
+      document.querySelector('.up').classList.add('fade')
+      document.querySelector('.down').classList.remove('fade')
+    }else if (page <= 1) {
+        document.querySelector('.down').classList.add('fade')
+        document.querySelector('.up').classList.remove('fade')
+    }
   }
 
   search = async () => {
@@ -87,9 +100,39 @@ class App extends Component {
 
   pageAdd = () => {
     this.setState({page: this.state.page + 1})
+
+    setTimeout(() => {
+      const page = this.state.page
+    if (page === 2) {
+      document.querySelector('.down').classList.remove('fade')
+      document.querySelector('.up').classList.remove('fade')
+    } else if (page === 3) {
+      document.querySelector('.up').classList.add('fade')
+      document.querySelector('.down').classList.remove('fade')
+    }else if (page === 1) {
+        document.querySelector('.down').classList.add('fade')
+        document.querySelector('.up').classList.remove('fade')
+    }
+    }, 100);
+
   }
   pageSub = () => {
     this.setState({page: this.state.page - 1})
+
+    setTimeout(() => {
+      const page = this.state.page
+    if (page === 2) {
+      document.querySelector('.down').classList.remove('fade')
+      document.querySelector('.up').classList.remove('fade')
+    } else if (page === 3) {
+      document.querySelector('.up').classList.add('fade')
+      document.querySelector('.down').classList.remove('fade')
+    }else if (page === 1) {
+        document.querySelector('.down').classList.add('fade')
+        document.querySelector('.up').classList.remove('fade')
+    }
+    }, 100);
+
   }
 
 

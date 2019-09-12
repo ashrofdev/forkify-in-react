@@ -26,8 +26,8 @@ const RecipeList = ({recipes, click, page, pageAdd, pageSub}) => {
                 </div>
                 {recipe}
                 <div className="pbuttons">
-                    <button onClick={pageSub}>Prev</button>
-                    <button onClick={pageAdd}>Next</button>
+                    <button className="down" onClick={pageSub}>Page {page-1}</button>
+                    <button className="up" onClick={pageAdd}>Page {page+1}</button>
                 </div>
             </div>
         )

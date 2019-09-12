@@ -107,6 +107,11 @@
     box-shadow: 1px 1px 2px rgb(112, 112, 112);
 }
 
+.fade {
+    opacity: .2;
+    visibility: hidden;
+}
+
 @keyframes animate {
     0% {
         opacity: 0;
