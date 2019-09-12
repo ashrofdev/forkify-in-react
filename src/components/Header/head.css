@@ -16,6 +16,7 @@ img {
 .likes {
     position: relative;
     height: 2rem;
+    transition: all 1s;
 }
 .likes .fa {
     color: transparent;

@@ -8,6 +8,14 @@
         transform: none;
     }
 }
+@keyframes pageani {
+    0% {
+        transform: rotate(1080deg);
+    }
+    100% {
+        transform: none;
+    }
+}
 
 .list {
     background-color: white;
@@ -17,6 +25,7 @@
 .ani {
     animation: in 1s;
 }
+
 .recipe {
     display: flex;
     padding: .5rem;
@@ -25,6 +34,10 @@
     transform: translateY(.2rem);
     transition: all .5s;
     color: red;
+    transition: all 1s;
+}
+.rotate {
+    animation: pageani 1s;
 }
 .recipe:hover {
     transform: none;
@@ -88,6 +101,7 @@
     color: var(--cp);
     background-color: rgba(252, 232, 196, 0.774);
     transition: all .4s;
+    outline: none;
 }
 .pbuttons button:hover {
     box-shadow: 1px 1px 2px rgb(112, 112, 112);

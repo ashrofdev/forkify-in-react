@@ -94,17 +94,9 @@ class App extends Component {
 
 
   onLike = () => {
-    document.querySelector('.top .fa').classList.toggle('fa-heart-o')
-    console.log(this.state.likes, 'likes list')
-    this.state.likes.forEach(e=>{
-      console.log(e, 'eeeeeee')
-      if (e === this.state.recipeDetails) {
-        console.log('already there')
-      } else {
-        this.state.likes.push(this.state.recipeDetails)
-        this.setState({likesList: this.state.likes})
-      }
-    })
+    this.state.likes.push(this.state.recipeDetails)
+    this.setState({likesList: this.state.likes})
+    document.querySelector('.likes').classList.toggle('rotate')
   }
 
   render(){
