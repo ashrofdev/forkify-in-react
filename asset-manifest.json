@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/forkify-in-react/static/css/main.a1199cec.chunk.css",
+    "main.js": "/forkify-in-react/static/js/main.33d0f41d.chunk.js",
+    "main.js.map": "/forkify-in-react/static/js/main.33d0f41d.chunk.js.map",
+    "runtime~main.js": "/forkify-in-react/static/js/runtime~main.c72a1814.js",
+    "runtime~main.js.map": "/forkify-in-react/static/js/runtime~main.c72a1814.js.map",
+    "static/css/2.87e65379.chunk.css": "/forkify-in-react/static/css/2.87e65379.chunk.css",
+    "static/js/2.1e3282b5.chunk.js": "/forkify-in-react/static/js/2.1e3282b5.chunk.js",
+    "static/js/2.1e3282b5.chunk.js.map": "/forkify-in-react/static/js/2.1e3282b5.chunk.js.map",
+    "index.html": "/forkify-in-react/index.html",
+    "precache-manifest.83081ca666c2473404b4d562f66bc65e.js": "/forkify-in-react/precache-manifest.83081ca666c2473404b4d562f66bc65e.js",
+    "service-worker.js": "/forkify-in-react/service-worker.js",
+    "static/css/2.87e65379.chunk.css.map": "/forkify-in-react/static/css/2.87e65379.chunk.css.map",
+    "static/css/main.a1199cec.chunk.css.map": "/forkify-in-react/static/css/main.a1199cec.chunk.css.map",
+    "static/media/font-awesome.min.css": "/forkify-in-react/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/logo.png": "/forkify-in-react/static/media/logo.31e29312.png",
+    "static/media/spinner.png": "/forkify-in-react/static/media/spinner.8adff875.png"
+  }
+}
